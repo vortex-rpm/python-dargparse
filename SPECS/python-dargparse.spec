@@ -4,8 +4,8 @@
 
 Name:           python-dargparse
 Version:        0.2.5
-Release:        1.vortex%{?dist}
-Summary:        Lightweight in-process concurrent programming
+Release:        2.vortex%{?dist}
+Summary:        Declarative command-line argument parser for python
 Group:          Development/Libraries
 License:        MIT
 URL:            http://pypi.python.org/pypi/dargparse
@@ -31,8 +31,11 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root,-)
-%{python_sitelib}/dargparse*
+%{python_sitelib}/*
 
 %changelog
+* Wed Feb 26 2015 Ilya Otyutskiy <ilya.otyutskiy@icloud.com> - 0.2.5-2.vortex
+- Fix description.
+
 * Wed Feb 25 2015 Ilya Otyutskiy <ilya.otyutskiy@icloud.com> - 0.2.5-1.vortex
 - Initial packaging.
