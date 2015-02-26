@@ -4,7 +4,7 @@
 
 Name:           python-dargparse
 Version:        0.2.5
-Release:        2.vortex%{?dist}
+Release:        3.vortex%{?dist}
 Summary:        Declarative command-line argument parser for python
 Group:          Development/Libraries
 License:        MIT
@@ -14,7 +14,8 @@ Source0:        http://pypi.python.org/packages/source/d/dargparse/dargparse-%{v
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildArch:      noarch
-BuildRequires:  python-devel, python-setuptools
+BuildRequires:  python-devel, python-setuptools, python-argparse
+Requires:	python-argparse
 
 %description
 Declarative command-line argument parser for Python.
@@ -24,7 +25,7 @@ Declarative command-line argument parser for Python.
 
 %install
 rm -rf %{buildroot}
-%{__python} setup.py install -O1 --skip-build --root %{buildroot}
+%{__python} setup.py install --root %{buildroot}
 
 %clean
 rm -rf %{buildroot}
@@ -34,6 +35,9 @@ rm -rf %{buildroot}
 %{python_sitelib}/*
 
 %changelog
+* Wed Feb 26 2015 Ilya Otyutskiy <ilya.otyutskiy@icloud.com> - 0.2.5-3.vortex
+- Fix build and deps.
+
 * Wed Feb 26 2015 Ilya Otyutskiy <ilya.otyutskiy@icloud.com> - 0.2.5-2.vortex
 - Fix description.
 
